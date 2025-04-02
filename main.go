@@ -10,7 +10,19 @@ import (
 	"os/exec"
 	"path/filepath"
 	"strings"
+
+	"github.com/mikerybka/util"
 )
+
+func main() {
+	s := &Server{
+		SongDir:             util.RequireEnvVar("SONG_DIR"),
+		SpotifyClientID:     util.RequireEnvVar("SPOTIFY_CLIENT_ID"),
+		SpotifyClientSecret: util.RequireEnvVar("SPOTIFY_CLIENT_SECRET"),
+		YoutubeAPIKey:       util.RequireEnvVar("YOUTUBE_API_KEY"),
+	}
+
+}
 
 type Server struct {
 	SongDir             string
